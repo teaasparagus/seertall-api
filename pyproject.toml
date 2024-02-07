@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "seertall-api"
+version = "0.1"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.27.0.post1"}
+python-multipart = "^0.0.7"
+loguru = "^0.7.2"
+structlog = "^24.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+httpx = "^0.26.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+lint.extend-select = [
+  "UP", # pyupgrade
+  "I",  # isort
+]

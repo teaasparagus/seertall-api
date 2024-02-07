@@ -1,0 +1,3 @@
+*.py[cod]
+datasets/Datasett_seertall_NRK_2018.csv
+.vscode/settings.json
