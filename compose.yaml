@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    environment:
+     - DB_URL=postgresql://postgres:postgres@postgres:5432/seertall
+    ports:
+      - 8000:8000
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=seertall
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  adminer:
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - 8080:8080
+volumes:
+  postgres_data: {}
